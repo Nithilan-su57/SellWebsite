@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- 1. Dynamic Header Scroll Effect (Light Theme) ---
+    // --- 1. Dynamic Header Scroll Effect ---
     const header = document.getElementById('mainHeader');
     
     window.addEventListener('scroll', () => {
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- 2. Advanced Scroll Animations (Intersection Observer) ---
+    // --- 2. Advanced Scroll Animations ---
     const scrollElements = document.querySelectorAll(".scroll-element");
 
     const elementInView = (el, dividend = 1) => {
@@ -31,43 +31,40 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    handleScrollAnimation();
+    handleScrollAnimation(); // Trigger on load
     window.addEventListener('scroll', () => {
         handleScrollAnimation();
     });
 
-    // --- 3. Plan Selection Logic ---
-    const planButtons = document.querySelectorAll('.plan-btn');
-    const businessSelect = document.getElementById('businessType');
-    const contactSection = document.getElementById('contact');
-
-    planButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            const targetPlan = e.target.getAttribute('data-plan');
-            
-            if(targetPlan) {
-                businessSelect.value = targetPlan;
-            }
-
-            contactSection.scrollIntoView({ behavior: 'smooth' });
-            
-            businessSelect.classList.add('ring-2', 'ring-yellow-400');
-            setTimeout(() => businessSelect.classList.remove('ring-2', 'ring-yellow-400'), 1500);
-        });
-    });
-
-    // --- 4. Form Submission Handling ---
+    // --- 3. WhatsApp Form Redirection Logic ---
     const agencyForm = document.getElementById('agencyForm');
 
-    agencyForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        const name = document.getElementById('clientName').value;
-        const phone = document.getElementById('clientPhone').value;
-        const selection = businessSelect.value;
+    if(agencyForm) {
+        agencyForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Prevent page reload
+            
+            // Get user inputs
+            const name = document.getElementById('clientName').value.trim();
+            const phone = document.getElementById('clientPhone').value.trim();
+            const message = document.getElementById('clientMessage').value.trim();
 
-        alert(`Brief Received, ${name}.\n\nSujeeth and Nithilan will review the parameters for your ${selection} and coordinate with you at ${phone} shortly.`);
-        
-        agencyForm.reset();
-    });
+            // Construct the pre-defined message
+            const whatsappText = `Hello Veloce Team! 👋\n\nMy name is *${name}*.\nMy contact number is: ${phone}\n\nI am reaching out regarding a website project. Here are my details/requirements:\n"${message}"\n\nLooking forward to discussing this!`;
+            
+            // Encode the message so it works safely in a URL
+            const encodedText = encodeURIComponent(whatsappText);
+            
+            // The target phone number (without the + symbol, just country code and number)
+            const whatsappNumber = "919789153001";
+            
+            // Generate the final wa.me link
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
+
+            // Open WhatsApp in a new tab
+            window.open(whatsappUrl, '_blank');
+            
+            // Optional: Reset form after opening WhatsApp
+            agencyForm.reset();
+        });
+    }
 });

@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Veloce Web Studio | Premium Engineering</title>
     
+    <!-- Tailwind CSS v4 Play CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-yellow-400 selection:text-slate-900 overflow-x-hidden">
 
+    <!-- Header -->
     <header id="mainHeader" class="fixed w-full top-0 z-50 transition-all duration-300 py-4 bg-white/80 backdrop-blur-md border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
             <div class="flex items-center space-x-2 group cursor-pointer">
@@ -19,205 +21,171 @@
                 </div>
                 <span class="text-2xl font-black tracking-tight text-slate-900">Veloce</span>
             </div>
-            <nav class="hidden md:flex space-x-8 text-sm font-bold text-slate-600">
-                <a href="#home" class="hover:text-yellow-500 transition">Home</a>
-                <a href="#about" class="hover:text-yellow-500 transition">About Us</a>
-                <a href="#services" class="hover:text-yellow-500 transition">Services</a>
-                <a href="#portfolio" class="hover:text-yellow-500 transition">Portfolio</a>
-                <a href="#contact" class="hover:text-yellow-500 transition">Contact</a>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-bold tracking-wide uppercase text-slate-600">
+                <a href="#trust" class="hover:text-slate-900 transition">Why Us</a>
+                <a href="#process" class="hover:text-slate-900 transition">Process</a>
+                <a href="#contact" class="bg-slate-900 text-white px-5 py-2.5 rounded-xl hover:bg-slate-800 transition shadow-md">Start Project</a>
             </nav>
-            <a href="#contact" class="bg-slate-900 hover:bg-slate-800 text-white text-sm font-bold px-6 py-2.5 rounded-full transition shadow-lg">
-                Start Project
-            </a>
         </div>
     </header>
 
-    <section id="home" class="relative pt-40 pb-24 md:pt-48 md:pb-32 flex flex-col items-center text-center px-6 z-10 bg-white">
-        <div class="absolute top-20 right-10 w-96 h-96 bg-yellow-300/20 rounded-full blur-[100px] pointer-events-none -z-10"></div>
-        
-        <div class="animate-fade-in-up">
-            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-100 border border-yellow-200 text-yellow-700 text-xs font-black tracking-widest uppercase mb-6">
-                <span class="w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></span>
-                Accepting New Clients
-            </span>
-        </div>
-        
-        <h1 class="text-5xl md:text-7xl font-black tracking-tight leading-tight max-w-4xl mx-auto animate-fade-in-up text-slate-900" style="animation-delay: 0.1s;">
-            Websites that turn local traffic into <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">paying customers.</span>
-        </h1>
-        
-        <p class="text-lg md:text-xl text-slate-600 mt-8 max-w-2xl mx-auto leading-relaxed animate-fade-in-up font-medium" style="animation-delay: 0.2s;">
-            We engineer lightning-fast, high-converting digital storefronts tailored specifically for businesses that want to dominate their local market.
-        </p>
-        
-        <div class="mt-12 flex flex-col sm:flex-row gap-5 justify-center animate-fade-in-up" style="animation-delay: 0.3s;">
-            <a href="#contact" class="bg-yellow-400 text-slate-900 hover:bg-yellow-500 font-black px-8 py-4 rounded-xl transition shadow-xl shadow-yellow-400/30">
-                Get Your Free Quote
-            </a>
-            <a href="https://wa.me/919789153001" target="_blank" class="flex items-center justify-center gap-3 border-2 border-slate-200 bg-white hover:bg-slate-50 text-slate-900 font-bold px-8 py-4 rounded-xl transition">
-                <svg class="w-5 h-5 fill-emerald-500" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.4.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.413 9.863-9.832.001-2.627-1.02-5.1-2.871-6.953C16.56 1.968 14.1 1.477 11.53 1.477c-5.437 0-9.862 4.414-9.865 9.835-.001 1.761.469 3.483 1.36 5.011L2.034 21.8l5.613-1.466z"/></svg>
-                Chat on WhatsApp
-            </a>
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-6 max-w-7xl mx-auto text-center min-h-[80vh] flex flex-col justify-center items-center">
+        <div class="animate-fade-in-up max-w-3xl">
+            <span class="px-4 py-1.5 bg-yellow-100 text-yellow-800 rounded-full text-xs font-black tracking-widest uppercase inline-block mb-6">Premium Web Engineering</span>
+            <h1 class="text-5xl md:text-7xl font-black tracking-tight text-slate-900 mb-6 leading-tight">
+                High-Performance Websites <br><span class="text-transparent bg-clip-text bg-gradient-to-r align-baseline from-yellow-500 to-yellow-600">Built to Convert.</span>
+            </h1>
+            <p class="text-lg text-slate-600 font-medium max-w-2xl mx-auto mb-10 leading-relaxed">
+                We craft ultra-fast, custom digital experiences engineered with premium design systems and flawless code execution. Your business deserves more than a template.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-black px-8 py-4 rounded-2xl transition shadow-lg shadow-yellow-400/20 uppercase tracking-wider text-sm text-center">
+                    Let's Build Your Site
+                </a>
+                <a href="#process" class="bg-white hover:bg-slate-100 text-slate-900 font-bold px-8 py-4 rounded-2xl transition border border-slate-200 text-sm text-center">
+                    See Our Process
+                </a>
+            </div>
         </div>
     </section>
 
-    <section id="about" class="py-24 relative z-10 bg-slate-50 border-t border-slate-200">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16 scroll-element">
-                <h2 class="text-4xl font-black text-slate-900">Meet Your Engineers</h2>
-                <div class="w-20 h-1.5 bg-yellow-400 mx-auto mt-6 mb-4 rounded-full"></div>
-                <p class="text-slate-600 mt-4 max-w-2xl mx-auto font-medium">You aren't dealing with a faceless corporation. We are a specialized engineering duo dedicated to building pixel-perfect digital platforms.</p>
+    <!-- Base Pricing Banner -->
+    <section class="py-12 bg-slate-900 text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+        <div class="relative z-10 max-w-4xl mx-auto px-6 scroll-element">
+            <h2 class="text-3xl md:text-4xl font-black text-white mb-2">Premium Websites Starting From <span class="text-yellow-400">₹3,999</span></h2>
+            <p class="text-slate-300 font-medium text-sm md:text-base">No hidden fees. Tailored exclusively to your brand's unique requirements.</p>
+        </div>
+    </section>
+
+    <!-- Quote / Trust Section -->
+    <section id="trust" class="py-24 bg-white border-b border-slate-200 px-6">
+        <div class="max-w-5xl mx-auto text-center scroll-element">
+            <div class="text-yellow-400 text-6xl font-serif leading-none mb-4">"</div>
+            <h2 class="text-3xl md:text-5xl font-black text-slate-900 leading-tight mb-8">
+                Your website is your best salesperson. <br>It works 24/7, never calls in sick, and never ignores a customer.
+            </h2>
+            <div class="w-20 h-1.5 bg-yellow-400 mx-auto rounded-full mb-8"></div>
+            <p class="text-slate-600 font-medium text-lg max-w-3xl mx-auto">
+                In today's digital landscape, a stunning, fast-loading website isn't an expense—it's your most profitable investment. If potential customers can't trust your digital storefront, they will walk over to your competitors. We ensure that never happens.
+            </p>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-24 bg-slate-50 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16 scroll-element">
+                <span class="text-xs font-black tracking-widest text-yellow-600 uppercase block mb-3">The Veloce Standard</span>
+                <h2 class="text-4xl font-black tracking-tight text-slate-900 mb-4">Why Brands Trust Us</h2>
             </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 scroll-element">
+                    <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center text-2xl mb-6">⚡</div>
+                    <h3 class="text-xl font-black text-slate-900 mb-3">Lightning Fast</h3>
+                    <p class="text-slate-600 text-sm font-medium leading-relaxed">We write clean, optimized code. Your users will never have to wait for a page to load, ensuring lower bounce rates and higher conversions.</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 scroll-element" style="transition-delay: 100ms;">
+                    <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center text-2xl mb-6">📱</div>
+                    <h3 class="text-xl font-black text-slate-900 mb-3">Mobile-First Design</h3>
+                    <p class="text-slate-600 text-sm font-medium leading-relaxed">Over 70% of traffic comes from mobile devices. Every site we engineer looks flawless and functions perfectly on every screen size.</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 scroll-element" style="transition-delay: 200ms;">
+                    <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center text-2xl mb-6">🔒</div>
+                    <h3 class="text-xl font-black text-slate-900 mb-3">Rock-Solid Security</h3>
+                    <p class="text-slate-600 text-sm font-medium leading-relaxed">Your data and your customers' data is paramount. We implement modern security standards to keep your digital assets safe from threats.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-24 bg-white border-t border-slate-200 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16 scroll-element">
+                <span class="text-xs font-black tracking-widest text-yellow-600 uppercase block mb-3">Our Workflow</span>
+                <h2 class="text-4xl font-black tracking-tight text-slate-900 mb-4">How We Engineer Success</h2>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-6">
+                <!-- Step 1 -->
+                <div class="text-center scroll-element">
+                    <div class="w-16 h-16 bg-slate-900 text-white rounded-2xl flex items-center justify-center text-2xl font-black mx-auto mb-6 shadow-lg shadow-slate-900/20">1</div>
+                    <h3 class="text-lg font-black text-slate-900 mb-2">Discovery</h3>
+                    <p class="text-slate-500 text-sm font-medium">We map out your business goals, target audience, and functional requirements over a quick brief.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="text-center scroll-element" style="transition-delay: 100ms;">
+                    <div class="w-16 h-16 bg-slate-900 text-white rounded-2xl flex items-center justify-center text-2xl font-black mx-auto mb-6 shadow-lg shadow-slate-900/20">2</div>
+                    <h3 class="text-lg font-black text-slate-900 mb-2">Prototyping</h3>
+                    <p class="text-slate-500 text-sm font-medium">We design high-fidelity UI mockups to give you a perfect vision of your future platform.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="text-center scroll-element" style="transition-delay: 200ms;">
+                    <div class="w-16 h-16 bg-slate-900 text-white rounded-2xl flex items-center justify-center text-2xl font-black mx-auto mb-6 shadow-lg shadow-slate-900/20">3</div>
+                    <h3 class="text-lg font-black text-slate-900 mb-2">Development</h3>
+                    <p class="text-slate-500 text-sm font-medium">Our engineers write clean, scalable code to bring the designs to life flawlessly.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="text-center scroll-element" style="transition-delay: 300ms;">
+                    <div class="w-16 h-16 bg-yellow-400 text-slate-900 rounded-2xl flex items-center justify-center text-2xl font-black mx-auto mb-6 shadow-lg shadow-yellow-400/30">4</div>
+                    <h3 class="text-lg font-black text-slate-900 mb-2">Launch</h3>
+                    <p class="text-slate-500 text-sm font-medium">We deploy your site to blazing-fast servers, ensuring maximum uptime and speed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-12 items-center bg-slate-900 rounded-[40px] p-8 md:p-14 shadow-2xl relative overflow-hidden">
+            <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-yellow-400 rounded-full blur-[80px] opacity-20 pointer-events-none"></div>
             
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-xl shadow-slate-200/50 flex flex-col sm:flex-row items-center sm:items-start gap-6 scroll-element">
-                    <div class="w-32 h-32 shrink-0 rounded-2xl bg-yellow-400 p-1">
-                        <img src="https://ui-avatars.com/api/?name=Sujeeth+S&background=ffffff&color=0f172a&size=256" alt="Sujeeth S" class="w-full h-full object-cover rounded-xl">
-                    </div>
-                    <div class="text-center sm:text-left">
-                        <h3 class="text-2xl font-black text-slate-900">Sujeeth S.</h3>
-                        <p class="text-yellow-600 text-sm font-black tracking-wide uppercase mt-1">Lead Frontend Engineer</p>
-                        <p class="text-slate-600 text-sm mt-4 leading-relaxed font-medium">Specializing in modern interface design, responsive layouts, and user psychology. Sujeeth ensures your website looks premium and captures customer attention immediately.</p>
-                    </div>
-                </div>
-
-                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-xl shadow-slate-200/50 flex flex-col sm:flex-row items-center sm:items-start gap-6 scroll-element" style="transition-delay: 100ms;">
-                    <div class="w-32 h-32 shrink-0 rounded-2xl bg-slate-900 p-1">
-                        <img src="https://ui-avatars.com/api/?name=Nithilan&background=ffffff&color=0f172a&size=256" alt="Nithilan" class="w-full h-full object-cover rounded-xl">
-                    </div>
-                    <div class="text-center sm:text-left">
-                        <h3 class="text-2xl font-black text-slate-900">Nithilan</h3>
-                        <p class="text-yellow-600 text-sm font-black tracking-wide uppercase mt-1">Lead Systems Architect</p>
-                        <p class="text-slate-600 text-sm mt-4 leading-relaxed font-medium">Expert in core computer science, backend systems, and rapid deployment. Nithilan ensures your digital infrastructure is secure, lightning-fast, and built to scale effortlessly.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="py-24 relative z-10 bg-white border-t border-slate-200">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16 scroll-element">
-                <h2 class="text-4xl font-black text-slate-900">Engineering Packages</h2>
-                <div class="w-20 h-1.5 bg-yellow-400 mx-auto mt-6 mb-4 rounded-full"></div>
-                <p class="text-slate-600 mt-4 max-w-2xl mx-auto font-medium">Select the architecture that fits your current business scale. No hidden fees.</p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8 items-center">
-                <div class="bg-slate-50 border border-slate-200 p-8 rounded-3xl scroll-element hover:border-yellow-400 transition duration-300">
-                    <h4 class="text-xl font-black text-slate-900">Business Profile</h4>
-                    <p class="text-slate-500 text-sm mt-2 font-medium">Perfect for cafes, salons, and contractors.</p>
-                    <div class="text-4xl font-black mt-6 text-slate-900">₹4,999</div>
-                    <ul class="mt-8 space-y-4 text-sm text-slate-700 font-bold">
-                        <li class="flex items-center gap-3"><div class="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center text-slate-900 text-xs">✓</div> Single Page UI Layout</li>
-                        <li class="flex items-center gap-3"><div class="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center text-slate-900 text-xs">✓</div> Lead Generation Form</li>
-                        <li class="flex items-center gap-3"><div class="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center text-slate-900 text-xs">✓</div> WhatsApp Integration</li>
-                    </ul>
-                    <button class="plan-btn mt-10 w-full bg-white border-2 border-slate-200 hover:border-slate-900 text-slate-900 font-black py-4 rounded-xl transition cursor-pointer" data-plan="Business Profile">Select Package</button>
-                </div>
-
-                <div class="bg-slate-900 border-4 border-yellow-400 p-8 rounded-3xl scroll-element relative transform md:-translate-y-4 shadow-2xl shadow-yellow-400/20">
-                    <span class="absolute -top-4 right-8 bg-yellow-400 text-slate-900 text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg">Most Popular</span>
-                    <h4 class="text-xl font-black text-white">Multi-Page Growth</h4>
-                    <p class="text-slate-400 text-sm mt-2 font-medium">Ideal for professional clinics & agencies.</p>
-                    <div class="text-4xl font-black mt-6 text-yellow-400">₹8,999</div>
-                    <ul class="mt-8 space-y-4 text-sm text-slate-200 font-bold">
-                        <li class="flex items-center gap-3"><div class="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center text-slate-900 text-xs">✓</div> Up to 5 Custom Pages</li>
-                        <li class="flex items-center gap-3"><div class="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center text-slate-900 text-xs">✓</div> Professional Copywriting</li>
-                        <li class="flex items-center gap-3"><div class="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center text-slate-900 text-xs">✓</div> Booking Widget Setup</li>
-                        <li class="flex items-center gap-3"><div class="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center text-slate-900 text-xs">✓</div> Foundational SEO</li>
-                    </ul>
-                    <button class="plan-btn mt-10 w-full bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-black py-4 rounded-xl transition cursor-pointer shadow-xl shadow-yellow-400/20" data-plan="Multi-Page Growth">Select Package</button>
-                </div>
-
-                <div class="bg-slate-50 border border-slate-200 p-8 rounded-3xl scroll-element hover:border-yellow-400 transition duration-300">
-                    <h4 class="text-xl font-black text-slate-900">E-Commerce Starter</h4>
-                    <p class="text-slate-500 text-sm mt-2 font-medium">For retail shops taking orders online.</p>
-                    <div class="text-4xl font-black mt-6 text-slate-900">₹14,999</div>
-                    <ul class="mt-8 space-y-4 text-sm text-slate-700 font-bold">
-                        <li class="flex items-center gap-3"><div class="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center text-slate-900 text-xs">✓</div> Digital Storefront Setup</li>
-                        <li class="flex items-center gap-3"><div class="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center text-slate-900 text-xs">✓</div> Payment Gateway Integration</li>
-                        <li class="flex items-center gap-3"><div class="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center text-slate-900 text-xs">✓</div> Order Management Panel</li>
-                    </ul>
-                    <button class="plan-btn mt-10 w-full bg-white border-2 border-slate-200 hover:border-slate-900 text-slate-900 font-black py-4 rounded-xl transition cursor-pointer" data-plan="E-Commerce Starter">Select Package</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="portfolio" class="py-24 relative z-10 bg-slate-50 border-t border-slate-200">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16 scroll-element">
-                <h2 class="text-4xl font-black text-slate-900">Our Past Work</h2>
-                <div class="w-20 h-1.5 bg-yellow-400 mx-auto mt-6 mb-4 rounded-full"></div>
-                <p class="text-slate-600 mt-4 max-w-2xl mx-auto font-medium">Take a look at the custom platforms we have engineered for local businesses.</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="group relative bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-lg scroll-element">
-                    <div class="h-64 bg-slate-200 flex items-center justify-center">
-                        <span class="text-slate-400 font-bold tracking-widest uppercase">Project Image 1</span>
-                    </div>
-                    <div class="p-8 relative bg-white">
-                        <span class="absolute -top-5 right-8 bg-yellow-400 text-slate-900 text-xs font-black px-4 py-2 rounded-full uppercase shadow-md">Salon & Spa</span>
-                        <h3 class="text-2xl font-black text-slate-900">Glow Studio Connect</h3>
-                        <p class="text-slate-600 mt-2 font-medium">A multi-page booking platform built for a local premium salon, increasing their online appointments by 40%.</p>
-                    </div>
-                </div>
-
-                <div class="group relative bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-lg scroll-element">
-                    <div class="h-64 bg-slate-900 flex items-center justify-center">
-                        <span class="text-slate-600 font-bold tracking-widest uppercase">Project Image 2</span>
-                    </div>
-                    <div class="p-8 relative bg-white">
-                        <span class="absolute -top-5 right-8 bg-slate-900 text-white text-xs font-black px-4 py-2 rounded-full uppercase shadow-md">E-Commerce</span>
-                        <h3 class="text-2xl font-black text-slate-900">Urban Cafe Direct</h3>
-                        <p class="text-slate-600 mt-2 font-medium">A lightning-fast digital menu and ordering system for a cafe, complete with WhatsApp order routing.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-24 relative z-10 bg-white border-t border-slate-200">
-        <div class="max-w-3xl mx-auto px-6">
-            <div class="bg-slate-900 p-10 md:p-14 rounded-[40px] relative overflow-hidden shadow-2xl shadow-slate-900/40">
-                <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-yellow-400 rounded-full blur-[80px] opacity-50"></div>
+            <div class="scroll-element z-10">
+                <span class="text-xs font-black tracking-widest text-yellow-400 uppercase block mb-3">Initiate Workspace</span>
+                <h2 class="text-4xl md:text-5xl font-black tracking-tight text-white mb-6">Ready to scale your digital presence?</h2>
+                <p class="text-slate-300 font-medium leading-relaxed mb-8">
+                    Skip the endless emails. Fill out your details, and you'll instantly be redirected to our direct WhatsApp line to discuss your project with our lead engineers.
+                </p>
                 
-                <div class="text-center mb-10 relative z-10">
-                    <h2 class="text-4xl font-black text-white">Initialize Project</h2>
-                    <p class="text-yellow-400 mt-4 font-bold">Send us your brief, and we'll reach out within hours.</p>
-                </div>
-                
-                <form id="agencyForm" class="space-y-6 relative z-10">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-xs font-black uppercase tracking-widest text-slate-400 mb-2 pl-1">Name</label>
-                            <input type="text" id="clientName" placeholder="Your name" required class="w-full bg-slate-800 border border-slate-700 focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 rounded-2xl px-5 py-4 text-sm text-white placeholder-slate-500 outline-none transition">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-black uppercase tracking-widest text-slate-400 mb-2 pl-1">WhatsApp</label>
-                            <input type="tel" id="clientPhone" placeholder="+91 XXXXX XXXXX" required class="w-full bg-slate-800 border border-slate-700 focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 rounded-2xl px-5 py-4 text-sm text-white placeholder-slate-500 outline-none transition">
-                        </div>
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+                        <svg class="w-6 h-6 fill-yellow-400" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.4.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.413 9.863-9.832.001-2.627-1.02-5.1-2.871-6.953C16.56 1.968 14.1 1.477 11.53 1.477c-5.437 0-9.862 4.414-9.865 9.835-.001 1.761.469 3.483 1.36 5.011L2.034 21.8l5.613-1.466z"/></svg>
                     </div>
                     <div>
-                        <label class="block text-xs font-black uppercase tracking-widest text-slate-400 mb-2 pl-1">Project Scope</label>
-                        <select id="businessType" class="w-full bg-slate-800 border border-slate-700 focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 rounded-2xl px-5 py-4 text-sm text-white outline-none transition cursor-pointer appearance-none font-medium">
-                            <option value="Business Profile">Business Profile Plan</option>
-                            <option value="Multi-Page Growth">Multi-Page Growth Plan</option>
-                            <option value="E-Commerce Starter">E-Commerce Starter Plan</option>
-                            <option value="Custom Project">I need a Custom Solution</option>
-                        </select>
+                        <p class="text-xs text-slate-400 font-bold uppercase tracking-wider">Direct Contact</p>
+                        <p class="text-white font-black text-lg">+91 97891 53001</p>
                     </div>
-                    <button type="submit" class="w-full bg-yellow-400 text-slate-900 hover:bg-yellow-500 font-black py-5 rounded-2xl transition shadow-xl shadow-yellow-400/20 mt-4 cursor-pointer text-base uppercase tracking-wider">
-                        Send Project Brief
+                </div>
+            </div>
+
+            <div class="bg-slate-800 rounded-3xl p-8 shadow-xl border border-slate-700 text-white scroll-element z-10">
+                <form id="agencyForm" class="space-y-5">
+                    <div>
+                        <label class="block text-xs font-black uppercase tracking-widest text-slate-400 mb-2 pl-1">Full Name</label>
+                        <input type="text" id="clientName" required class="w-full bg-slate-900 border border-slate-700 focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 rounded-2xl px-5 py-4 text-sm text-white outline-none transition font-medium" placeholder="Your Name">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-black uppercase tracking-widest text-slate-400 mb-2 pl-1">Phone Number</label>
+                        <input type="tel" id="clientPhone" required class="w-full bg-slate-900 border border-slate-700 focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 rounded-2xl px-5 py-4 text-sm text-white outline-none transition font-medium" placeholder="Your Contact Number">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-black uppercase tracking-widest text-slate-400 mb-2 pl-1">Tell us about your business</label>
+                        <textarea id="clientMessage" rows="3" required class="w-full bg-slate-900 border border-slate-700 focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 rounded-2xl px-5 py-4 text-sm text-white outline-none transition font-medium resize-none" placeholder="What kind of website are you looking for?"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-yellow-400 text-slate-900 hover:bg-yellow-500 font-black py-5 rounded-2xl transition shadow-xl shadow-yellow-400/20 mt-4 cursor-pointer text-base uppercase tracking-wider flex justify-center items-center gap-2">
+                        <svg class="w-5 h-5 fill-slate-900" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.4.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.413 9.863-9.832.001-2.627-1.02-5.1-2.871-6.953C16.56 1.968 14.1 1.477 11.53 1.477c-5.437 0-9.862 4.414-9.865 9.835-.001 1.761.469 3.483 1.36 5.011L2.034 21.8l5.613-1.466z"/></svg>
+                        Chat on WhatsApp
                     </button>
                 </form>
             </div>
         </div>
     </section>
 
-    <footer class="py-12 border-t border-slate-200 bg-slate-50 text-center">
+    <!-- Footer -->
+    <footer class="py-12 bg-white text-center">
         <p class="text-slate-500 text-sm font-bold">Built by Sujeeth S. & Nithilan &copy; 2026 Veloce Web Studio.</p>
     </footer>
 
