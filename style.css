@@ -1,0 +1,50 @@
+/* Custom Premium Styles for Light Theme */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* 1. Initial Hero Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    opacity: 0;
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 2. Scroll Trigger Animations (Controlled by JS) */
+.scroll-element {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-element.scrolled {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 3. Light Theme Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f8fafc; /* Slate 50 */
+}
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1; /* Slate 300 */
+    border-radius: 10px;
+    border: 2px solid #f8fafc;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #facc15; /* Yellow 400 */
+}
