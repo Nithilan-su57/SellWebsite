@@ -1,4 +1,4 @@
-# Veloce Web Studio 🚀
+# NS Web Creations 🚀
 
 A premium, highly responsive static agency website designed to showcase web development services and seamlessly capture client project briefs. Built with performance and user experience in mind, this landing page features a modern UI and direct client-to-agency communication routing.
 
