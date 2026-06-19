@@ -36,35 +36,82 @@ document.addEventListener('DOMContentLoaded', () => {
         handleScrollAnimation();
     });
 
-    // --- 3. WhatsApp Form Redirection Logic ---
+    // --- 3. WhatsApp & Email Routing Logic ---
     const agencyForm = document.getElementById('agencyForm');
+    const emailSubmitBtn = document.getElementById('emailSubmitBtn');
 
     if(agencyForm) {
+        
+        // Handle WhatsApp Submission
         agencyForm.addEventListener('submit', (e) => {
-            e.preventDefault(); // Prevent page reload
+            e.preventDefault(); 
             
-            // Get user inputs
             const name = document.getElementById('clientName').value.trim();
             const phone = document.getElementById('clientPhone').value.trim();
             const message = document.getElementById('clientMessage').value.trim();
 
-            // Construct the pre-defined message
-            const whatsappText = `Hello Veloce Team! 👋\n\nMy name is *${name}*.\nMy contact number is: ${phone}\n\nI am reaching out regarding a website project. Here are my details/requirements:\n"${message}"\n\nLooking forward to discussing this!`;
+            const whatsappText = `Hello NS Web Creation Team! 👋\n\nMy name is *${name}*.\nMy contact number is: ${phone}\n\nI am reaching out regarding a website project. Here are my details/requirements:\n"${message}"\n\nLooking forward to discussing this!`;
             
-            // Encode the message so it works safely in a URL
             const encodedText = encodeURIComponent(whatsappText);
+            const whatsappNumber = "918248274649";
             
-            // The target phone number (without the + symbol, just country code and number)
-            const whatsappNumber = "919789153001";
-            
-            // Generate the final wa.me link
-            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
+            const appUrl = `whatsapp://send?phone=${whatsappNumber}&text=${encodedText}`;
+            const webUrl = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
 
-            // Open WhatsApp in a new tab
-            window.open(whatsappUrl, '_blank');
+            const submitBtn = agencyForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
             
-            // Optional: Reset form after opening WhatsApp
-            agencyForm.reset();
+            submitBtn.textContent = "Connecting...";
+            submitBtn.disabled = true;
+
+            let appOpened = false;
+
+            window.addEventListener('blur', () => { appOpened = true; });
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) { appOpened = true; }
+            });
+
+            setTimeout(() => {
+                window.location.href = appUrl;
+
+                setTimeout(() => {
+                    if (!appOpened) {
+                        window.open(webUrl, '_blank');
+                    }
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                    agencyForm.reset();
+                }, 2000); 
+
+            }, 500);
         });
+
+        // Handle Email Submission
+        if(emailSubmitBtn) {
+            emailSubmitBtn.addEventListener('click', () => {
+                // Ensure required fields are filled out before drafting email
+                if(!agencyForm.checkValidity()) {
+                    agencyForm.reportValidity();
+                    return;
+                }
+
+                const name = document.getElementById('clientName').value.trim();
+                const phone = document.getElementById('clientPhone').value.trim();
+                const message = document.getElementById('clientMessage').value.trim();
+
+                const emailSubject = `New Website Project Inquiry from ${name}`;
+                const emailBody = `Hello NS Web Creation Team,\n\nMy name is ${name}.\nMy contact number is: ${phone}\n\nI am reaching out regarding a website project. Here are my details/requirements:\n"${message}"\n\nLooking forward to discussing this!`;
+                
+                const mailtoLink = `mailto:nswebcreation@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+                
+                // Open the user's default email client
+                window.location.href = mailtoLink;
+                
+                // Optionally reset the form after they click the email button
+                setTimeout(() => {
+                    agencyForm.reset();
+                }, 1000);
+            });
+        }
     }
 });
